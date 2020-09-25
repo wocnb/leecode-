@@ -1,0 +1,13 @@
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        ans = str()
+        i = 0
+        condition = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+        str1 = ['M', 'CM', 'D','CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+        while num > 0:
+            if num - condition[i] >= 0:
+                ans += str1[i]
+                num = num - condition[i]
+            else:
+                i += 1      
+        return ans
